@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import checkIsCurrentPage from "../../helpers/styleNavUnderline"
 
 import {
   header,
@@ -10,9 +11,11 @@ import {
   order_1,
   order_2,
   order_3,
+  stretch,
 } from "./header.module.css"
 
 const Header = () => {
+  let temp = null
   return (
     <header className={header}>
       <Link to="/">
@@ -32,6 +35,7 @@ const Header = () => {
         <Link
           className={`${navLink} ${order_1}`}
           activeClassName={currentPage}
+          onAnimationEnd={e => checkIsCurrentPage(e, stretch)}
           to="/"
         >
           Home
@@ -39,13 +43,15 @@ const Header = () => {
         <Link
           className={`${navLink} ${order_2}`}
           activeClassName={currentPage}
+          onAnimationEnd={e => checkIsCurrentPage(e, stretch)}
           to="/about/"
         >
           About
         </Link>
         <Link
-          className={`${navLink} ${order_3}`}
+          className={`${navLink} ${order_3} `}
           activeClassName={currentPage}
+          onAnimationEnd={e => checkIsCurrentPage(e, stretch)}
           to="/contact/"
         >
           Contact
