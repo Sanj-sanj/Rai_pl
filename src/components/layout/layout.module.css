@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+/* every sibling selector will get these styles */
+/* helps normalize spacing */
+/* * + * {
+  margin-top: 1rem;
+} */
+
+html,
+body {
+  margin: 0;
+  color: #555;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* Remove margin for main div that gatsby mounts into */
+/* div[id~="gatsby-announcer"] {
+  margin-top: 0;
+} */
+
+h1 {
+  font-size: 2.785rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1.785rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+  /* anything that comes after a heading will get these styles */
+}
+h1 ~ *,
+h2 ~ *,
+h3 ~ *,
+h4 ~ *,
+h5 ~ *,
+h6 ~ * {
+  margin-top: 0.5rem;
+}
+strong {
+  color: #222;
+}
+li {
+  margin-top: 0.25rem;
+}
+
+.main {
+  margin: 2rem auto;
+  max-width: 90vw;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  min-height: 81vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
