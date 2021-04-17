@@ -6,32 +6,29 @@
   grid-area: 1/1;
   position: relative;
 
-  background-image: linear-gradient(to top, #ffcca9de, 8rem, #8ce7f31a);
-  animation: movement 5s infinite;
+  background-image: linear-gradient(to top, #ffcca9de, 4rem, #8ce7f31a);
 }
+
+.heroContentslayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+}
+.heroContentslayout > * {
+  color: #dddddc;
+  text-shadow: 2px 3px #b76a26;
+}
+
 .textContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
+  align-items: center;
 }
 .textContainer > a {
   color: maroon;
   padding-top: 1rem;
   font-weight: 600;
-  background-image: radial-gradient(to bottom, cyan, 1rem, magenta);
   font-size: 2rem;
 }
-/* 
-@keyframes movement {
-  0% {
-    background: linear-gradient(#ffcca9de, red);
-  }
-  50% {
-    background: linear-gradient(#ffcca9de, magenta);
-  }
-  100% {
-    background: linear-gradient(#ffcca9de, red);
-  }
-}
-*/

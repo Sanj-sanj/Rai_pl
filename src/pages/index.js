@@ -5,10 +5,13 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <h1>This is a title</h1>
-        <div>Hello world!</div>
-        <h2>This is my H2</h2>
-        <div>what could this ever mean.</div>
+        <h1>Rai Plumbing</h1>
+        <h2>We are under construction!</h2>
+        <p>
+          Our site is being developed currently, our contact information,
+          services and a gallery will be adde in the near future.
+        </p>
+        <p>Look forward to it!</p>
       </Layout>
     </>
   )

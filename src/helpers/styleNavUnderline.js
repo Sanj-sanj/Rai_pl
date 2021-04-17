@@ -9,5 +9,5 @@ export default function checkIsCurrentPage(e, style) {
 function addStretch(e, style) {
   setTimeout(() => {
     e.target.classList.add(style)
-  }, 200)
+  }, 400)
 }

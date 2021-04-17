@@ -1,0 +1,75 @@
+.nav {
+  margin-top: 0;
+  display: flex;
+}
+
+.navLink {
+  position: relative;
+  display: inline-block;
+  color: #222;
+  font-size: 1rem;
+  font-weight: "normal";
+  line-height: 1;
+  margin: 0 0.5rem 0 0;
+  padding: 0.25rem;
+  text-decoration: none;
+  animation: dropFade 1s 1 ease-in-out;
+  animation-fill-mode: both;
+}
+.navLink:last-of-type {
+  margin-right: 0;
+}
+.navLink:hover:not(.currentPage) {
+  border-bottom: 2px solid rgb(209, 198, 198);
+  width: 100%;
+}
+
+.currentPage {
+  /* underline applied transparent to act as placeholder for the stretch::after's space */
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+}
+
+.stretch::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  border-top: 2px solid rgb(129, 17, 17);
+  left: 0;
+  bottom: -2px;
+  animation: stretch 1s 1 ease-in-out;
+}
+
+.order_1 {
+  animation-delay: 0ms;
+}
+.order_2 {
+  animation-delay: 150ms;
+}
+.order_3 {
+  animation-delay: 350ms;
+}
+
+@keyframes stretch {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes dropFade {
+  0% {
+    top: -400%;
+    opacity: 0;
+    color: red;
+  }
+  100% {
+    top: 0%;
+    opacity: 1;
+    color: black;
+  }
+}
