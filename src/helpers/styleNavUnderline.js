@@ -1,6 +1,5 @@
 export default function checkIsCurrentPage(e, style) {
   if (e.target.className.includes("currentPage--")) {
-    console.log(true)
     addStretch(e, style)
   }
   return

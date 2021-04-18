@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata()
 
   return (
-    <div className={container}>
+    <>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       <div className={main}>{children}</div>
       {/* footer goes here */}
       <Footer />
-    </div>
+    </>
   )
 }
 export default Layout

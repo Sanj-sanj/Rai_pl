@@ -1,12 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import Nav from "../nav/nav"
+import Nav from "../nav/Nav"
 
 import { header } from "./header.module.css"
 
 const Header = () => (
-  <header className={header} onScroll={e => console.log(e)}>
+  <header className={header}>
     <Link to="/">
       <StaticImage
         src="../../../images/RAIPL.png"

@@ -15,7 +15,7 @@ const Hero = () => {
         src="../../../images/bathroom.jpg"
         alt=""
         layout={"constrained"}
-        style={{ gridArea: "1/1", maxHeight: "65vh", minHeight: "65vh" }}
+        style={{ gridArea: "1/1", maxHeight: "66vh", minHeight: "66vh" }}
       />
       <div className={textBox}>
         <div className={heroContentslayout}>

@@ -60,7 +60,7 @@ li {
   width: 550px;
   display: flex;
   flex-direction: column;
-  min-height: 74vh;
+  min-height: 75vh;
 }
 .container {
   display: flex;
