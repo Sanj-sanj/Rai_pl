@@ -1,0 +1,40 @@
+.hamburger {
+  background: none;
+  border: none;
+  padding: 2em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.25rem;
+}
+.filling {
+  position: absolute;
+  background: #ee6c4d;
+  width: 32px;
+  height: 3px;
+}
+.filling::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  background: #ee6c4d;
+  width: 100%;
+  height: 3px;
+}
+.filling::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  background: #ee6c4d;
+  width: 100%;
+  height: 3px;
+}
+
+@media (min-width: 751px) {
+  .hamburger {
+    display: none;
+  }
+}
