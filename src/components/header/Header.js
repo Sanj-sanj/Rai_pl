@@ -3,23 +3,27 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Nav from "../nav/Nav"
 import Hamburger from "../hamburger/Hamburger"
-import { nav, navMobile, navMobileClosed } from "../nav/nav.module.css"
 
-import { header } from "./header.module.css"
+import {
+  header,
+  navBlock,
+  navMobile,
+  navMobileClosed,
+} from "./header.module.css"
 
 const Header = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
-  const [navStyle, setNavStyle] = useState(nav)
+  const [navStyle, setNavStyle] = useState(navBlock)
   const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
     if (innerWidth >= 751) {
-      return setNavStyle(nav)
+      return setNavStyle(navBlock)
     }
     if (toggle) {
       return setNavStyle(navMobile)
     }
-    if (!toggle && navStyle !== nav) {
+    if (!toggle && navStyle !== navBlock) {
       setNavStyle(navMobileClosed)
     }
   }, [innerWidth, toggle])
