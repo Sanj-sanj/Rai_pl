@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import Nav from "../nav/Nav"
+import Nav from "../nav/Nav.js"
 import Hamburger from "../hamburger/Hamburger"
 
 import {
