@@ -1,10 +1,10 @@
 import React from "react"
-import { hamburger, filling } from "./hamburger.module.css"
+import { hamburgerArea, filling } from "./hamburger.module.css"
 
 const MobileNav = ({ toggle, setToggle }) => {
   return (
     <button
-      className={hamburger}
+      className={hamburgerArea}
       onClick={() => {
         setToggle(!toggle)
       }}

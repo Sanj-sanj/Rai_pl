@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import Header from "../header/Header"
 import Footer from "../footer/Footer"
 import Hero from "../hero/Hero"
-import { main, container } from "./layout.module.css"
+import { main } from "./layout.module.css"
 import useSiteMetadata from "../../hooks/useSiteMetadata"
 
 const Layout = ({ children }) => {

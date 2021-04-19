@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Nav from "../nav/Nav"
-import Hamburger from "../nav/Hamburger/Hamburger"
+import Hamburger from "../hamburger/Hamburger"
 import { nav, navMobile, navMobileClosed } from "../nav/nav.module.css"
 
 import { header } from "./header.module.css"
@@ -24,6 +24,14 @@ const Header = () => {
     }
   }, [innerWidth, toggle])
 
+  useEffect(() => {
+    const listenTo = debounce(getWindowSize)
+    window.addEventListener("resize", listenTo)
+    return () => {
+      window.removeEventListener("resize", listenTo)
+    }
+  }, [])
+
   function debounce(func) {
     let timer
     return () => {
@@ -35,13 +43,6 @@ const Header = () => {
     console.log("ds")
     return setInnerWidth(window.innerWidth)
   }
-  useEffect(() => {
-    const listenTo = debounce(getWindowSize)
-    window.addEventListener("resize", listenTo)
-    return () => {
-      window.removeEventListener("resize", listenTo)
-    }
-  }, [])
 
   return (
     <>
