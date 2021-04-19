@@ -12,7 +12,7 @@ import {
 } from "./header.module.css"
 
 const Header = () => {
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth)
+  const [innerWidth, setInnerWidth] = useState(null)
   const [navStyle, setNavStyle] = useState(navBlock)
   const [toggle, setToggle] = useState(false)
 
@@ -44,7 +44,6 @@ const Header = () => {
     }
   }
   function getWindowSize() {
-    console.log("ds")
     return setInnerWidth(window.innerWidth)
   }
 
