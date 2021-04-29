@@ -5,6 +5,7 @@ import Nav from "../nav/Nav.js"
 import Hamburger from "../hamburger/Hamburger"
 
 import {
+  headerContainer,
   header,
   navBlock,
   navMobile,
@@ -48,8 +49,8 @@ const Header = () => {
   }
 
   return (
-    <>
-      <header className={header}>
+    <header className={headerContainer}>
+      <div className={header}>
         <Link to="/">
           <StaticImage
             src="../../../images/RAIPL.png"
@@ -63,8 +64,8 @@ const Header = () => {
         </Link>
         <Hamburger toggle={toggle} setToggle={setToggle} />
         <Nav currStyle={navStyle} />
-      </header>
-    </>
+      </div>
+    </header>
   )
 }
 

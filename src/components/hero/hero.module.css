@@ -6,7 +6,7 @@
   grid-area: 1/1;
   position: relative;
 
-  background-image: linear-gradient(to top, #ffcca9de, 4rem, #8ce7f31a);
+  background-image: linear-gradient(to top, #732f008a, 4rem, #0b12134d);
 }
 
 .heroContentslayout {
@@ -14,13 +14,22 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+  padding-right: 10rem;
+  padding: 0.5rem calc((100vw - 750px - 0.5rem) / 2);
 }
 .heroContentslayout > * {
   color: #dddddc;
-  text-shadow: 2px 3px #b76a26;
+  text-shadow: 2px 3px 1px #b76a26;
 }
-
+.heroInformationSection {
+  color: #dddddc;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5rem calc((100vw - 750px - 0.5rem) / 2);
+  text-align: center;
+  padding-bottom: 4rem;
+  text-shadow: 2px 2px 6px black;
+}
 .textContainer {
   display: flex;
   flex-direction: column;

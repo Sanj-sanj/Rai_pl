@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: "Rai Plumbing LTD.",
     description:
-      "A family run plumbing buisness specializing in new residential plumbing servives, since 1996.",
+      "A family run plumbing buisness specializing in new residential plumbing services, since 1996.",
   },
 
   plugins: [

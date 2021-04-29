@@ -1,3 +1,8 @@
+.headerContainer {
+  position: absolute;
+  width: 100%;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -11,8 +16,8 @@
   max-height: 9.5vh;
   min-height: 7.5vh;
   background: linear-gradient(
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.9)
+    rgba(255, 255, 255, 0.308),
+    rgba(255, 255, 255, 0.309)
   );
 }
 .navBlock {
@@ -25,7 +30,10 @@
   position: absolute;
   top: 7.5vh;
   width: 100%;
-  background: white;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.308),
+    rgba(255, 255, 255, 0.309)
+  );
   padding: 0 4rem;
   height: 100vh;
   text-align: center;
