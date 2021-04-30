@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, useStaticQuery } from "gatsby"
+// import { Link, useStaticQuery } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import {
   backgroundImg,
   textBox,
-  textContainer,
+  // textContainer,
   heroContentslayout,
   heroInformationSection,
 } from "./hero.module.css"
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className={heroInformationSection}>
           <p>
             With over 25 years of experience. The licensed crew at Rai Plumbing
-            offers a quality service with guarnteed customer satisfaction.
+            offers quality service with guaranteed customer satisfaction.
           </p>
         </div>
       </div>

@@ -1,39 +1,52 @@
+:root {
+  --backgroundColour: linear-gradient(
+    rgba(255, 255, 255, 0.708),
+    rgba(255, 255, 255, 0.709)
+  );
+}
+
 .headerContainer {
   position: absolute;
   width: 100%;
+}
+
+.additionalInfoBar {
+  width: 100%;
+  position: relative;
+  z-index: 200;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.708),
+    rgba(255, 255, 255, 0.709)
+  );
 }
 
 .header {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: #eee;
   border-bottom: 1px solid #ddd;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding: 0.5rem;
   padding: 0.5rem calc((100vw - 1200px - 0.5rem) / 2);
-  max-height: 9.5vh;
-  min-height: 7.5vh;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.308),
-    rgba(255, 255, 255, 0.309)
-  );
+  /* padding-bottom: 0; */
+  /* max-height: 9.5vh;
+  min-height: 7.5vh; */
+  background: var(--backgroundColour);
 }
 .navBlock {
   margin-top: 0;
   display: flex;
 }
 .navMobile {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   position: absolute;
-  top: 7.5vh;
+  top: 7.5vh; */
   width: 100%;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.308),
-    rgba(255, 255, 255, 0.309)
-  );
+  background: white;
   padding: 0 4rem;
   height: 100vh;
   text-align: center;
@@ -47,12 +60,12 @@
   padding: 1rem 2rem;
 }
 .navMobileClosed {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   position: absolute;
-  top: -7.5vh;
+  top: -7.5vh; */
   width: 100%;
-  background: rgb(105, 104, 104);
+  background: white;
   padding: 0 4rem;
   height: 0vh;
   opacity: 0;
@@ -76,21 +89,27 @@
 @keyframes closeMenu {
   0% {
     height: 100vh;
-    top: 7.5vh;
     opacity: 1;
   }
-  50% {
-    opacity: 0;
-  }
+
   100% {
     height: 0vh;
-    top: -17.5vh;
     opacity: 0;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   .navBlock {
     display: none;
+  }
+  .header {
+    padding: 0.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }

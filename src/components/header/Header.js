@@ -5,6 +5,7 @@ import Nav from "../nav/Nav.js"
 import Hamburger from "../hamburger/Hamburger"
 
 import {
+  additionalInfoBar,
   headerContainer,
   header,
   navBlock,
@@ -13,12 +14,15 @@ import {
 } from "./header.module.css"
 
 const Header = () => {
-  const [innerWidth, setInnerWidth] = useState(null)
+  const [windowSize, setWindowSize] = useState({
+    innerWidth: null,
+    innerHeight: null,
+  })
   const [navStyle, setNavStyle] = useState(navBlock)
   const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
-    if (innerWidth >= 751) {
+    if (windowSize.innerWidth >= 751) {
       return setNavStyle(navBlock)
     }
     if (toggle) {
@@ -27,7 +31,7 @@ const Header = () => {
     if (!toggle && navStyle !== navBlock) {
       setNavStyle(navMobileClosed)
     }
-  }, [innerWidth, toggle])
+  }, [windowSize, toggle])
 
   useEffect(() => {
     const listenTo = debounce(getWindowSize)
@@ -45,11 +49,18 @@ const Header = () => {
     }
   }
   function getWindowSize() {
-    return setInnerWidth(window.innerWidth)
+    console.log("resize")
+    return setWindowSize({
+      innerWidth: window.innerWidth,
+      innerHeight: window.innerHeight,
+    })
   }
 
   return (
     <header className={headerContainer}>
+      <div className={additionalInfoBar}>
+        <span>This is for stuff</span>
+      </div>
       <div className={header}>
         <Link to="/">
           <StaticImage
