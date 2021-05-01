@@ -6,6 +6,7 @@ import {
   textBox,
   // textContainer,
   heroContentslayout,
+  heroTopBox,
   heroInformationSection,
 } from "./hero.module.css"
 
@@ -20,8 +21,17 @@ const Hero = () => {
       />
       <div className={textBox}>
         <div className={heroContentslayout}>
-          <h2>Plumbing services for residential and commercial</h2>
-          <h4>Servicing various regions of the lower mainland and Calgary.</h4>
+          <div className={heroTopBox}>
+            <div className="box-left">
+              <h2>Plumbing services for residential and commercial</h2>
+              <h4>
+                Servicing various regions of the lower mainland and Calgary.
+              </h4>
+            </div>
+            <div className="box-right">
+              <h3>This will contain contact form</h3>
+            </div>
+          </div>
         </div>
         <div className={heroInformationSection}>
           <p>

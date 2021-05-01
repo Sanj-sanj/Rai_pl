@@ -7,6 +7,7 @@ import Hamburger from "../hamburger/Hamburger"
 import {
   additionalInfoBar,
   headerContainer,
+  headerTop,
   header,
   navBlock,
   navMobile,
@@ -58,8 +59,31 @@ const Header = () => {
 
   return (
     <header className={headerContainer}>
-      <div className={additionalInfoBar}>
-        <span>This is for stuff</span>
+      <div className={headerTop}>
+        <div className={additionalInfoBar}>
+          <span>
+            <StaticImage
+              objectFit="contain"
+              src="../../../static/pin.svg"
+              alt="location pin"
+              layout="constrained"
+              width={20}
+              placeholder="tracedSVG"
+            />
+            <a href="tel:+16048973869">+1 604-897-3869</a>
+          </span>
+          <span>
+            <StaticImage
+              objectFit="contain"
+              src="../../../static/mail.svg"
+              alt="mail"
+              layout="constrained"
+              width={20}
+              placeholder="tracedSVG"
+            />
+            <a href="mailto: info@raiplumbing.com">Info@raiplumbing.com</a>
+          </span>
+        </div>
       </div>
       <div className={header}>
         <Link to="/">
