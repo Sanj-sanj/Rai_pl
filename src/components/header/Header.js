@@ -7,6 +7,7 @@ import Hamburger from "../hamburger/Hamburger"
 import {
   additionalInfoBar,
   headerContainer,
+  headerContainerCompact,
   headerTop,
   header,
   navBlock,
@@ -15,30 +16,22 @@ import {
 } from "./header.module.css"
 
 const Header = () => {
-  const [windowSize, setWindowSize] = useState({
-    innerWidth: null,
-    innerHeight: null,
-  })
   const [navStyle, setNavStyle] = useState(navBlock)
   const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
-    if (windowSize.innerWidth >= 751) {
-      return setNavStyle(navBlock)
-    }
     if (toggle) {
       return setNavStyle(navMobile)
     }
     if (!toggle && navStyle !== navBlock) {
       setNavStyle(navMobileClosed)
     }
-  }, [windowSize, toggle])
+  }, [toggle])
 
   useEffect(() => {
-    const listenTo = debounce(getWindowSize)
-    window.addEventListener("resize", listenTo)
+    window.onscroll = debounce(getHeaderPosition)
     return () => {
-      window.removeEventListener("resize", listenTo)
+      window.onscroll = null
     }
   }, [])
 
@@ -49,12 +42,17 @@ const Header = () => {
       timer = setTimeout(func, 100)
     }
   }
-  function getWindowSize() {
-    console.log("resize")
-    return setWindowSize({
-      innerWidth: window.innerWidth,
-      innerHeight: window.innerHeight,
-    })
+
+  function getHeaderPosition() {
+    const body = document.querySelector("body")
+    const position = body.getBoundingClientRect().top
+    const header = document.querySelector("header")
+    if (position < 0 && !header.classList.contains(headerContainerCompact)) {
+      return header.classList.add(headerContainerCompact)
+    }
+    if (position === 0 && header.classList.contains(headerContainerCompact)) {
+      return header.classList.remove(headerContainerCompact)
+    }
   }
 
   return (
@@ -103,5 +101,4 @@ const Header = () => {
     </header>
   )
 }
-
 export default Header
