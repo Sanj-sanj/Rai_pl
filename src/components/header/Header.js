@@ -29,8 +29,13 @@ const Header = () => {
   }, [toggle])
 
   useEffect(() => {
+    const measureWidth = window.addEventListener(
+      "resize",
+      debounce(getWindowWidth)
+    )
     window.onscroll = debounce(getHeaderPosition)
     return () => {
+      window.removeEventListener("resize", measureWidth)
       window.onscroll = null
     }
   }, [])
@@ -40,6 +45,11 @@ const Header = () => {
     return () => {
       if (timer) clearTimeout(timer)
       timer = setTimeout(func, 100)
+    }
+  }
+  function getWindowWidth() {
+    if (window.innerWidth >= 768 && navStyle !== navBlock) {
+      return setNavStyle(navBlock)
     }
   }
 
