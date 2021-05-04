@@ -9,13 +9,13 @@ import {
   headerContainer,
   headerContainerCompact,
   headerTop,
-  header,
+  headerBottom,
   navBlock,
   navMobile,
   navMobileClosed,
 } from "./header.module.css"
 
-const Header = () => {
+const Header = ({ contact: { phone, email } }) => {
   const [navStyle, setNavStyle] = useState(navBlock)
   const [toggle, setToggle] = useState(false)
 
@@ -78,7 +78,7 @@ const Header = () => {
               width={20}
               placeholder="tracedSVG"
             />
-            <a href="tel:+16048973869">+1 604-897-3869</a>
+            <a href={`tel: ${phone.replaceAll("-", "")}`}>{phone}</a>
           </span>
           <span>
             <StaticImage
@@ -89,11 +89,11 @@ const Header = () => {
               width={20}
               placeholder="tracedSVG"
             />
-            <a href="mailto: info@raiplumbing.com">Info@raiplumbing.com</a>
+            <a href={`mailto: ${email}`}>{email}</a>
           </span>
         </div>
       </div>
-      <div className={header}>
+      <div className={headerBottom}>
         <Link to="/">
           <StaticImage
             src="../../../images/RAIPL.png"

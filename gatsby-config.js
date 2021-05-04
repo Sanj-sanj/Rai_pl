@@ -10,6 +10,10 @@ module.exports = {
     title: "Rai Plumbing LTD.",
     description:
       "A family run plumbing buisness specializing in new residential plumbing services, since 1996.",
+    contact: {
+      phone: "604-897-3869",
+      email: "Info@raiplumbing.com",
+    },
   },
 
   plugins: [
