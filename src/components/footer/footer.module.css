@@ -2,11 +2,28 @@
   min-height: 10vh;
   width: 100%;
   text-align: center;
-  background-color: #eee;
+  background-color: #7a726c;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem calc((100vw - 1200px - 0.5rem) / 2);
-  position: relative;
-  bottom: 0;
+  padding: 2.5rem calc((100vw - 1200px - 0.5rem) / 2);
+  padding-bottom: 1rem;
+}
+
+.footer * p {
+  color: white;
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 6vh;
+}
+.contactItem {
+  display: flex;
+}
+.contactItem > a {
+  margin-left: 0.25rem;
+  color: #98c1d9;
 }

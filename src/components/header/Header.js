@@ -20,25 +20,28 @@ const Header = ({ contact: { phone, email } }) => {
   const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
+    if (window.innerWidth >= 768) {
+      return setNavStyle(navBlock)
+    }
     if (toggle) {
       return setNavStyle(navMobile)
     }
     if (!toggle && navStyle !== navBlock) {
       setNavStyle(navMobileClosed)
     }
-  }, [toggle])
+  }, [toggle, navStyle])
 
   useEffect(() => {
     const measureWidth = window.addEventListener(
       "resize",
-      debounce(getWindowWidth)
+      debounce(defaultNavStyle)
     )
     window.onscroll = debounce(getHeaderPosition)
     return () => {
       window.removeEventListener("resize", measureWidth)
       window.onscroll = null
     }
-  }, [])
+  })
 
   function debounce(func) {
     let timer
@@ -47,9 +50,9 @@ const Header = ({ contact: { phone, email } }) => {
       timer = setTimeout(func, 100)
     }
   }
-  function getWindowWidth() {
+  function defaultNavStyle() {
     if (window.innerWidth >= 768 && navStyle !== navBlock) {
-      return setNavStyle(navBlock)
+      return setToggle(false)
     }
   }
 
@@ -72,7 +75,7 @@ const Header = ({ contact: { phone, email } }) => {
           <span>
             <StaticImage
               objectFit="contain"
-              src="../../../static/pin.svg"
+              src="../../../static/phone.svg"
               alt="location pin"
               layout="constrained"
               width={20}
