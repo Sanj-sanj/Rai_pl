@@ -81,7 +81,7 @@ const Header = ({ contact: { phone, email } }) => {
               width={20}
               placeholder="tracedSVG"
             />
-            <a href={`tel: ${phone.replaceAll("-", "")}`}>{phone}</a>
+            <a href={`tel: ${phone.replace(/[-]/g, "")}`}>{phone}</a>
           </span>
           <span>
             <StaticImage
