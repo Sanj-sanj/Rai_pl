@@ -63,11 +63,12 @@
   width: 100%;
   background: white;
   padding: 0 4rem;
-  height: 100vh;
   text-align: center;
   animation: openMenu 1s ease-out;
   border-bottom: 3px solid #ee6c4d;
-  z-index: -1;
+  position: absolute;
+  top: 7vh;
+  left: 0;
 }
 .navMobile > a,
 .navMobileClosed > a {
@@ -79,33 +80,33 @@
   width: 100%;
   background: white;
   padding: 0 4rem;
-  height: 0vh;
   opacity: 0;
   text-align: center;
   animation: closeMenu 1s ease-out;
   border-bottom: 3px solid #ee6c4d;
-  z-index: 0;
+  position: absolute;
+  top: 7vh;
+  left: 0;
 }
 
 @keyframes openMenu {
   0% {
-    height: 0vh;
+    transform: translateY(-50vh);
     opacity: 0;
   }
   100% {
-    height: 100vh;
+    transform: translateY(0%);
     opacity: 1;
   }
 }
 
 @keyframes closeMenu {
   0% {
-    height: 100vh;
+    transform: translateY(0%);
     opacity: 1;
   }
-
   100% {
-    height: 0vh;
+    transform: translateY(-50vh);
     opacity: 0;
   }
 }

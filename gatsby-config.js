@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: "Rai Plumbing LTD.",
     description:
-      "A family run plumbing buisness specializing in new residential and commercial plumbing services, since 1996.",
+      "A family run plumbing buisness specializing in new residential and commercial plumbing construction, since 1996.",
     contact: {
       phone: "604-897-3869",
       email: "Info@raiplumbing.com",
